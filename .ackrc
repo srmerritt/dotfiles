@@ -1,0 +1,5 @@
+--python
+-G^(?!.*migrations).*$
+--color-match=underscore
+--color-lineno=clear
+--color-filename=yellow
