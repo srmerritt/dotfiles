@@ -1,12 +1,11 @@
 #!/bin/bash
 
-cd ~/rdio
 OUTPUT=`git diff --cached --name-status | awk '$1 != "R" { print $2 }' | xargs pyflakes | ack '(undefined name)|(invalid syntax)'`
 LINES=`echo "$OUTPUT" | wc -l | awk '{ print $1 }'`
 if [ "$LINES" -ne "0" ]
 then
 	echo "Errors:"
 	echo "$OUTPUT"
-  exit 1;
+	exit 1;
 fi
 
