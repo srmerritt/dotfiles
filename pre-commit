@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ERRORS=`git diff --cached --name-status | awk '$1 != "R" { print $2 }' | xargs pyflakes | ack '(undefined name)|(invalid syntax)'`
+ERRORS=`git diff --cached --name-status | awk '$1 != "R" { print $2 }' | ack '.*\.py$' | xargs pyflakes | ack '(undefined name)|(invalid syntax)'`
 DIFF=`git diff -U0 --cached`
 PDBS=`python .git/hooks/find_pdbs_from_diff.py "$DIFF"`
 ERRORLINES=`echo "$ERRORS" | wc -l | awk '{ print $1 }'`
