@@ -5,4 +5,4 @@ A git pre-commit hook to pass any edits to python files through pyflakes and sea
 
 This uses `ack` over `grep` due to my own personal habits, but you can change this in `pre-commit` if you do not have `ack` installed.
 
-Move both files into `.git/hooks` directory of your local git repository.
+Move `find_pdbs_from_diff.py` and `pre-commit` into `.git/hooks` directory of your local git repository.
