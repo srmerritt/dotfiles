@@ -1,8 +1,9 @@
+call pathogen#infect()
+
 " fawwnts
 set guifont=Menlo\ Regular:h12
       
 set ai
-set si
 set wrap
 set number
 set ruler
@@ -13,6 +14,10 @@ set hidden
 
 set nobackup
 set noswapfile
+
+"show extraneous whitespace
+set list
+set listchars=tab:>-,trail:_,extends:>
 
 "tab stop
 set softtabstop=2
@@ -44,16 +49,17 @@ nnoremap <C-y> 3<C-y>
 set backspace=indent,eol,start
 
 " non-stupid syntax
-syntax on 
+syntax enable
 filetype on
 filetype plugin on
 filetype indent on
 set hlsearch
+set nosmartindent
 
 " colors, solarized!
-set background=light
+set t_Co=256
+set background=dark
 colorscheme solarized
-"let g:solarized_force_light_Background=1
 
 " moving between windows
 map <C-j> <C-W>j
@@ -66,3 +72,7 @@ inoremap jj <Esc>
 
 " the shift key can die
 nnoremap ; :
+
+" run pyflakes
+map <leader>p :!pyflakes % <CR>
+

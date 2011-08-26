@@ -1,0 +1,16 @@
+session:
+  name: main
+  windows:
+  - name: git
+    root: ~/rdio/rdio
+    splits:
+     - cmd:
+  - name: single
+    root: ~/rdio/rdio
+    splits:
+     - cmd:
+  - name: tests
+    root: ~/rdio/rdio
+    splits:
+     - width: 50
+     - width: 50
