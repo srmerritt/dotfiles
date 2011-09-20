@@ -1,0 +1,3 @@
+IGNORES=`cat ~/.log_ignore | awk 'BEGIN { ORS = "" } {print "(?!.*" $0 ")";}'`
+alias plog="awk '{ print "'"\n"'" \$0 }' | sed 's/#012/\\`echo -e "'"'"\n\r"'"'"`/g'"
+alias flog="ack-grep --nocolor 'ERROR - $IGNORES'"
