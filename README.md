@@ -1,14 +1,18 @@
 test_coprophagia.py
 ==================
 
-A tiny tool that takes in the output of a django test run, and outputs the failing test cases in the format required by django's test-runner command.
+A tiny tool whose input is the output of a django test run, and whose output is the failing test cases, formatted as input to the django test-runner.
 
 That's all very circular, so how about an example that silently tests `my_app` and then immediately re-runs any tests that failed:
+
 `./manage.py test my_app 2>&1 | test_coprophagia.py | xargs ./manage.py test`
 
 Or, more usefully (and how my aliases are set up to use the script):
+
 `./manage.py test my_app 2>&1 | tee test_output.log`
+
 Then, later:
+
 `cat test_output.log | test_coprophagia.py | xargs ./manage.py test`
 
 pre-commit
