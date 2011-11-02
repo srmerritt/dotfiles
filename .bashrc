@@ -1,5 +1,4 @@
 alias grep='grep --exclude=*00*.py*'
-alias grep='grep --exclude=*00*.py*'
 function find_git_branch() {
   local MAYBE_GIT_HEAD="$(pwd | sed 's/\(\/Users\/scottmerritt\/rdio[^/]*\).*/\1\/.git\//')HEAD"
   if [ -f "$MAYBE_GIT_HEAD" ]
