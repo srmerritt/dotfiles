@@ -7,7 +7,11 @@
 def main():
   import sys
   failed_test_cases = []
-  for line in sys.stdin.readlines():
+  while 1:
+    line = sys.stdin.readline()
+    if line == '':
+      break
+
     tokens = line.split(' ')
     if len(tokens) == 3:
       (error_level, test_function, package_path) = tokens
