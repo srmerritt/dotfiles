@@ -7,11 +7,11 @@ That's all very circular, so how about an example that silently tests `my_app` a
 
 `./manage.py test my_app 2>&1 | test_coprophagia.py | xargs ./manage.py test`
 
-Or, more usefully (and how my aliases are set up to use the script):
+Or, more usefully (and how my aliases are set up to use the script), run the tests normally:
 
 `./manage.py test my_app 2>&1 | tee test_output.log`
 
-Then, later:
+Then, later re-run the tests that failed:
 
 `cat test_output.log | test_coprophagia.py | xargs ./manage.py test`
 
