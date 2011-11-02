@@ -1,8 +1,4 @@
 alias grep='grep --exclude=*00*.py*'
-alias bast='ssh smerritt@bastion.int.rdio'
-alias fabr='ssh fabric@bastion.int.rdio'
-alias cdell='ssh smerritt@craigs-dell'
-alias dev2='ssh smerritt@dev2.int.rdio'
 alias grep='grep --exclude=*00*.py*'
 function find_git_branch() {
   local MAYBE_GIT_HEAD="$(pwd | sed 's/\(\/Users\/scottmerritt\/rdio[^/]*\).*/\1\/.git\//')HEAD"
