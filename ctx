@@ -1,0 +1,42 @@
+#!/bin/sh
+# Context fun!
+CONTEXT_DIR=~/.context
+CONTEXT_FILE=$CONTEXT_DIR/.ctx
+
+# Load helper functions.
+source $CONTEXT_DIR/.init
+
+if [ -z "$1" ]; then
+  echo "In '$(getctx)' context."
+else
+  if [ "$1" == 'list' ]; then
+    echo "Available contexts:"
+    echo "$(ls $CONTEXT_DIR)"
+  elif [ "$1" == 'new' -o "$1" == 'edit' ]; then
+    if [ -z "$2" ]; then
+      echo "Specify a context name."
+    else
+      $EDITOR $CONTEXT_DIR/$2
+    fi
+  elif [ "$1" == 'set' -o "$1" == '-' ]; then
+    if [ -z "$2" ]; then
+      echo "Specify a context name."
+    elif [ -a $CONTEXT_DIR/$2 ]; then
+      echo "$2" > $CONTEXT_FILE
+      changectx
+    else
+      echo "Context not found. Use 'ctx new'."
+    fi
+  elif [ "$1" == 'show' ]; then
+    if [ -z "$2" ]; then
+      echo "Specify a context name."
+    elif [ -a $CONTEXT_DIR/$2 ]; then
+      cat $CONTEXT_DIR/$2
+    else
+      echo "Context not found. Use 'ctx new'.'"
+    fi
+  else
+    echo "ctx [list/new/edit/set/show] [context name]"
+  fi
+fi
+

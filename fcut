@@ -1,0 +1,13 @@
+#!/bin/sh
+
+if [ -z "$1" ]; then
+  echo "fcut file start until"
+elif [ -z "$2" ]; then
+  echo "fcut file start until"
+elif [ -z "$3" ]; then
+  echo "fcut file start until"
+elif [ -a $1 ]; then
+  head -n $(($3 - 1)) $1 | tail -n $(($3 - $2))
+else
+  echo "File not found."
+fi

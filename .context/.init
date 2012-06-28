@@ -1,0 +1,29 @@
+#!/bin/sh
+# Context lets you quickly switch between different shell profiles. The
+# contexts are stored under ~/.context, and there's a simple wrapper, 'ctx',
+# to manage them.
+#
+# An example usage would be different development environments, where it's
+# desirable for all new terminal windows to open in the environment's root
+# directory. To switch the environment, and therefore the directory each new
+# window begins in, the user would use 'ctx set <name>', provided that '<name>'
+# has previously been defined with 'ctx new <name>'.
+
+export CONTEXT_DIR=~/.context
+export CONTEXT_FILE=$CONTEXT_DIR/.ctx
+
+function changectx() {
+  local CONTEXT=$(getctx)
+  if [ -a $CONTEXT_DIR/$CONTEXT ]
+  then
+    source $CONTEXT_DIR/$CONTEXT
+  else
+    echo "No context file found for $CONTEXT"
+  fi
+}
+
+function getctx() {
+  echo "$(cat $CONTEXT_FILE | awk '{ print $1; }')"
+}
+
+
