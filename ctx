@@ -10,8 +10,7 @@ if [ -z "$1" ]; then
   echo "In '$(getctx)' context."
 else
   if [ "$1" == 'list' ]; then
-    echo "Available contexts:"
-    echo "$(ls $CONTEXT_DIR)"
+    ls $CONTEXT_DIR
   elif [ "$1" == 'new' -o "$1" == 'edit' ]; then
     if [ -z "$2" ]; then
       echo "Specify a context name."
