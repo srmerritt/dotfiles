@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/Users/scottmerritt/rdios/2/rdio/payment/external/paypal/tests'
+let g:netrw_dirhist_2='/Users/scottmerritt/rdios/1/rdio/permanent_recorder'
+let g:netrw_dirhist_3='/Users/scottmerritt/rdios/1/rdio/payment/external/cybersource/requests'
+let g:netrw_dirhist_4='/Users/scottmerritt/rdios/1/rdio/video/movie/models'
+let g:netrw_dirhist_5='/usr/local/go_lib/src/hackday'
+let g:netrw_dirhist_6='/Users/scottmerritt/rdios/1/rdio/payment/external/paypal/tests'
+let g:netrw_dirhist_7='/Users/scottmerritt/rdios/1/rdio/payment/subscription_tests/tests'

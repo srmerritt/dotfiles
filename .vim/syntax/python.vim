@@ -253,27 +253,26 @@ if exists("python_highlight_builtin_objs") && python_highlight_builtin_objs != 0
   syn keyword pythonBuiltinObj	__debug__ __doc__ __file__ __name__ __package__
 endif
 
-if exists("python_highlight_builtin_funcs") && python_highlight_builtin_funcs != 0
+"if exists("python_highlight_builtin_funcs") && python_highlight_builtin_funcs != 0
   " Builtin functions
-  syn keyword pythonBuiltinFunc	__import__ abs all any apply
-  syn keyword pythonBuiltinFunc	basestring bin bool buffer bytearray bytes callable
-  syn keyword pythonBuiltinFunc	chr classmethod cmp coerce compile complex
-  syn keyword pythonBuiltinFunc	delattr dict dir divmod enumerate eval
-  syn keyword pythonBuiltinFunc	execfile file filter float format frozenset getattr
-  syn keyword pythonBuiltinFunc	globals hasattr hash help hex id
-  syn keyword pythonBuiltinFunc	input int intern isinstance
-  syn keyword pythonBuiltinFunc	issubclass iter len list locals long map max
-  syn keyword pythonBuiltinFunc	min next object oct open ord
-  syn keyword pythonBuiltinFunc	pow property range
-  syn keyword pythonBuiltinFunc	raw_input reduce reload repr
-  syn keyword pythonBuiltinFunc	reversed round set setattr
-  syn keyword pythonBuiltinFunc	slice sorted staticmethod str sum super tuple
-  syn keyword pythonBuiltinFunc	type unichr unicode vars xrange zip
-
-  if exists("python_print_as_function") && python_print_as_function != 0
-      syn keyword pythonBuiltinFunc	print
-  endif
+syn keyword pythonBuiltinFunc	__import__ abs all any apply
+syn keyword pythonBuiltinFunc	basestring bin bool buffer bytearray bytes callable
+syn keyword pythonBuiltinFunc	chr classmethod cmp coerce compile complex
+syn keyword pythonBuiltinFunc	delattr dict dir divmod enumerate eval
+syn keyword pythonBuiltinFunc	execfile file filter float format frozenset getattr
+syn keyword pythonBuiltinFunc	globals hasattr hash help hex id
+syn keyword pythonBuiltinFunc	input int intern isinstance
+syn keyword pythonBuiltinFunc	issubclass iter len list locals long map max
+syn keyword pythonBuiltinFunc	min next object oct open ord
+syn keyword pythonBuiltinFunc	pow property range
+syn keyword pythonBuiltinFunc	raw_input reduce reload repr
+syn keyword pythonBuiltinFunc	reversed round set setattr
+syn keyword pythonBuiltinFunc	slice sorted staticmethod str sum super tuple
+syn keyword pythonBuiltinFunc	type unichr unicode vars xrange zip
+if exists("python_print_as_function") && python_print_as_function != 0
+    syn keyword pythonBuiltinFunc	print
 endif
+"endif
 
 if exists("python_highlight_exceptions") && python_highlight_exceptions != 0
   " Builtin exceptions and warnings
@@ -369,7 +368,7 @@ if version >= 508 || !exists("did_python_syn_inits")
   HiLink pythonBinError		Error
 
   HiLink pythonBuiltinObj	Structure
-  HiLink pythonBuiltinFunc	Function
+"  HiLink pythonBuiltinFunc	Function
 
   HiLink pythonExClass	Structure
 
